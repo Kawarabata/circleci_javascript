@@ -1,8 +1,12 @@
 version: 2.1
-jobs:
-  build:
+executors:
+  node:
     docker:
       - image: cimg/node:lts
+
+jobs:
+  build:
+    executor: node
     steps:
       - checkout
       - run: yarn install
